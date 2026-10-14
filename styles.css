@@ -1,0 +1,87 @@
+* { box-sizing: border-box; }
+:root {
+  color-scheme: light;
+  --ink: #20334b;
+  --heading: #124f98;
+  --link: #075db4;
+  --link-hover: #003e80;
+  --muted: #506c8c;
+  --line: #b3cef0;
+}
+html { scroll-padding-top: 24px; }
+body {
+  margin: 0;
+  background: #e3efff;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.page {
+  max-width: 900px;
+  margin: 36px auto;
+  padding: 36px 42px 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--link-hover); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+p { margin: 0 0 16px; }
+.profile {
+  display: grid;
+  grid-template-columns: 225px minmax(0, 1fr);
+  align-items: start;
+  gap: 32px;
+  margin-bottom: 26px;
+}
+h1 { color: var(--heading); font: bold 31px/1.25 Georgia, "Times New Roman", serif; margin: 10px 0 20px; }
+h1 span { display: inline-block; margin-left: 8px; font-family: "Songti SC", "SimSun", serif; font-size: 20px; font-weight: normal; white-space: nowrap; }
+address { font-style: normal; }
+.contact-details { margin: 14px 0 0; }
+.portrait-figure { margin: 0; }
+.portrait-figure img { display: block; width: 100%; height: auto; }
+figcaption { margin-top: 6px; font-size: 11px; line-height: 1.6; color: var(--muted); }
+figcaption a { color: inherit; }
+section + section { border-top: 1px solid var(--line); margin-top: 23px; padding-top: 20px; }
+h2 { color: var(--heading); font-size: 20px; line-height: 1.3; margin: 0 0 20px; }
+h3 { color: var(--heading); font-size: 16px; margin: 22px 0 10px; }
+.publications { padding-left: 25px; margin: 0; }
+.publication { margin-bottom: 21px; padding-left: 3px; }
+.publication:last-child { margin-bottom: 0; }
+.paper-title { font-style: italic; }
+.paper-details { color: #456386; }
+.paper-links { white-space: nowrap; }
+summary { width: fit-content; cursor: pointer; color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+summary:hover { color: var(--link-hover); }
+.teaching-role { font-weight: normal; }
+.courses { margin: 0; padding-left: 24px; }
+.courses li { margin: 7px 0; }
+.course-term { font-weight: 600; }
+footer { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 16px; font-size: 13px; }
+.skip-link { position: absolute; top: -100px; left: 16px; padding: 8px 12px; background: #fff; }
+.skip-link:focus { top: 8px; }
+@media (max-width: 940px) {
+  .page { margin: 24px; padding: 28px 30px 22px; }
+  .profile { grid-template-columns: 200px minmax(0, 1fr); gap: 26px; }
+}
+@media (max-width: 620px) {
+  body { background: #fff; }
+  .page { border: 0; margin: 0; padding: 24px 22px; }
+  .profile { display: flex; flex-direction: column; gap: 22px; margin-bottom: 24px; }
+  .profile-info { order: -1; }
+  h1 { margin: 0 0 18px; font-size: 29px; }
+  h1 span { font-size: 19px; }
+  .portrait-figure { width: 190px; }
+  figcaption { font-size: 11px; }
+  .publication { margin-bottom: 23px; }
+  a { overflow-wrap: anywhere; }
+}
+@media print {
+  body { background: #fff; font-size: 11pt; }
+  .page { max-width: none; margin: 0; padding: 0; border: 0; }
+  .profile { display: grid; grid-template-columns: 150px 1fr; }
+  a { color: inherit; }
+  footer, .skip-link { display: none; }
+  .publication { break-inside: avoid; }
+}
